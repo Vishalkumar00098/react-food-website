@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
  import classes from'./header.module.css';
+import { useCart } from '../../hooks/useCart';
 
  export default function Header() {
     const user = {
-        name: 'john',
+        name: 'vishal',
     };
 
-    const cart = {
-        totalCount : 10,
-    };
+    const {cart} = useCart();
     
   const logout = () => {
     console.log('Logout clicked');
@@ -29,7 +28,7 @@ import { Link } from 'react-router-dom';
                 <div className={classes.menu}>
                 <Link to="/profile">Profile</Link>
                 <Link to="/orders">Orders</Link>
-                <a onClick={logout}>Logout</a>
+                <a href="#" onClick={logout}>Logout</a>
                 </div>
             </li>
        ) : (
